@@ -15,4 +15,13 @@ public class PawnAnimation : MonoBehaviour
         }
     }
 
+    public bool Jump
+    {
+        get => m_Animator.GetBool("IsJump");
+        set
+        {
+            m_Animator.SetBool("IsJump", value);
+        }
+    }
+
 }
