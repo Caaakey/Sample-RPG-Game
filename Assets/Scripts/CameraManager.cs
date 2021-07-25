@@ -60,5 +60,18 @@ public class CameraManager : MonoBehaviour
 
         //  실습겸 숙제 1
         //  카메라 위 아래 움직이게 하기
+        if (playerPosition.y > m_Rect.Top)
+        {
+            transform.position = new Vector3(position.x, position.y + m_Height, 0);
+            m_Rect.Top += m_Height;
+            m_Rect.Bottom += m_Height;
+        }
+        else if (playerPosition.y < m_Rect.Bottom)
+        {
+            transform.position = new Vector3(position.x, position.y - m_Height, 0);
+            m_Rect.Top -= m_Height;
+            m_Rect.Bottom -= m_Height;
+        }
+
     }
 }
